@@ -1,6 +1,6 @@
 package com.gm2.pdv.service;
 
-import com.gm2.pdv.dto.ProductDTO;
+import com.gm2.pdv.dto.ProductSaleDTO;
 import com.gm2.pdv.dto.ProductInfoDTO;
 import com.gm2.pdv.dto.SaleDTO;
 import com.gm2.pdv.dto.SaleInfoDTO;
@@ -19,13 +19,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
-import javax.persistence.EntityNotFoundException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -101,7 +98,7 @@ public class SaleService {
         }
     }
 
-    private List<ItemSale> getItemSale(List<ProductDTO> products) {
+    private List<ItemSale> getItemSale(List<ProductSaleDTO> products) {
 
         if(products.isEmpty()){
             throw new InvalidOperationException("Não possível adicionar a venda sem itens!");
