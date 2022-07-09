@@ -2,8 +2,6 @@ package com.gm2.pdv.controller;
 
 import com.gm2.pdv.dto.ResponseDTO;
 import com.gm2.pdv.dto.UserDTO;
-import com.gm2.pdv.entity.User;
-import com.gm2.pdv.exceptions.NoItemException;
 import com.gm2.pdv.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
