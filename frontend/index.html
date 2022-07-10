@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+
+        const { createApp } = Vue
+
+        const baseUrl = "http://localhost:8080/user"
+
+        const mainContainer = {
+            data(){
+                return {
+
+                }
+            },
+            mounted() {
+                axios.get(baseUrl, {
+                    auth: {
+                        username: 'genilson.martins',
+                        password: "123"
+                    }
+                })
+                .then(response => {
+                    response.data.forEach(element => {
+                        console.log(element)
+                    });
+                })
+            },
+        }
+
+        createApp(mainContainer).mount('#app')
+    </script>
+</body>
+</html>
