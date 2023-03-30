@@ -54,7 +54,7 @@ public class CoinController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity delete(@PathVariable int id){
-        boolean response = false;
+         boolean response = false;
         try{
             response = coinRepository.remove(id);
             return new ResponseEntity<>(response, HttpStatus.OK);

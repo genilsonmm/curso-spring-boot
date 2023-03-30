@@ -49,11 +49,11 @@ public class CoinRepository {
     public boolean remove(int id) {
         Coin coin = entityManager.find(Coin.class, id);
 
-        if(!entityManager.contains(coin)){
-            coin = entityManager.merge(coin);
-        }
+        if(coin == null)
+            throw new RuntimeException();
 
         entityManager.remove(coin);
         return true;
     }
+
 }
