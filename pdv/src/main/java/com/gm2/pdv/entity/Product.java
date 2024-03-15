@@ -1,11 +1,11 @@
 package com.gm2.pdv.entity;
 
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
-import javax.validation.constraints.Min;
+import jakarta.persistence.*;
 import java.math.BigDecimal;
 
 @AllArgsConstructor
